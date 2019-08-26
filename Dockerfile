@@ -11,4 +11,4 @@ RUN apk add --no-cache curl \
     && curl -L -H "Cache-Control: no-cache" -o "/usr/bin/inlets" "https://github.com/alexellis/inlets/releases/download/${INLETS_VER}/inlets" \
     && chmod +x /usr/bin/inlets
 
-CMD [ "inlets","client","-r","${REMOTE_URL}","-u","${UPSTREAM}","-t","${TOKEN}" ]
+ENTRYPOINT inlets client -r ${REMOTE_URL} -u ${UPSTREAM} -t ${TOKEN}
